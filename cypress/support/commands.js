@@ -24,9 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-// // Comandos customizados para interagir com partes genêricas da aplicação
-// import './commands/common'
+// Comandos customizados para interagir com partes genêricas da aplicação
+import './commands/common'
 
-// // Comandos customizados para interagir com funcionalidades específicas
-// import './commands/login'
-// import './commands/tranferencia'
+// Comandos customizados para interagir com funcionalidades específicas
+import './commands/login'
