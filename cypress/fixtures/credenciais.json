@@ -1,0 +1,16 @@
+{
+    "organizadorValido": {
+        "nome": "Ana Organiza",
+        "email": "ana.organizadora@beachliga.com",
+        "senha": "Beach2026"
+    },
+    "participanteValido": {
+        "nome": "Diego Silva",
+        "email": "diego.participante@beachliga.com",
+        "senha": "Beach2026"
+    },
+    "invalido": {
+        "email": "otavio.participante@beachliga.com",
+        "senha": "000000"
+    }
+}
