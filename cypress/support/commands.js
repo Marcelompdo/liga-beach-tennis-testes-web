@@ -28,4 +28,6 @@
 import './commands/common'
 
 // Comandos customizados para interagir com funcionalidades específicas
+import './commands/cadastro'
 import './commands/login'
+import './commands/ligas'

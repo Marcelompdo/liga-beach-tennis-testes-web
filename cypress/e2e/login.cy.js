@@ -7,7 +7,7 @@ describe('Login', () => {
     cy.fazerLoginOrganizador()
 
     cy.fixture('credenciais').then(credenciais => {
-      cy.get('.toast').should('have.text', `Olá, ${credenciais.organizadorValido.nome}!`)
+      cy.verificarMensagemToast(`Olá, ${credenciais.organizadorValido.nome}!`)
     })
   })
 
