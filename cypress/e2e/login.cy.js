@@ -3,7 +3,7 @@ describe('Login', () => {
     cy.visit('/')
   })
 
-  it('Login com dados válidos', () => {
+  it('Login com dados válidos deve permitir acesso ao sistema', () => {
     cy.fazerLoginOrganizador()
 
     cy.fixture('credenciais').then(credenciais => {
@@ -11,7 +11,7 @@ describe('Login', () => {
     })
   })
 
-  it('Login com dados inválidos', () => {
+  it('Login com dados inválidos deve retornar menssagem de erro', () => {
     cy.tentarFazerLoginInvalido()
 
     cy.get('#auth-error').should('have.text', 'Email ou senha inválidos.')

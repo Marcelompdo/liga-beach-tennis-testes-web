@@ -3,7 +3,7 @@ describe('Cadastro', () => {
         cy.visit('/')
     })
 
-    it('Cadastro novo usuário organizador', () => {
+    it('Cadastro novo usuário organizador deve mostrar mensagem de sucesso', () => {
         cy.cadastrarUsuarioOrganizador()
 
         cy.fixture('usuarios').then(usuarios => {

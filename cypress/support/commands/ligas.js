@@ -22,12 +22,33 @@ Cypress.Commands.add('sortearGruposLiga', () => {
         })
 
         // Confirma que foi encontrada uma liga que atende aos dois critérios
-        expect(cardEncontrado, 'uma liga com mais de 4 inscritos e inscrições abertas').to.exist
+        expect(cardEncontrado, 'Precisa ter uma liga com mais de 4 inscritos e inscrições abertas').to.exist
 
         // Transforma o card encontrado em um objeto Cypress para poder interagir com ele
         cy.wrap(cardEncontrado)
             .contains('button.draw', 'Sortear grupos')
             .should('be.enabled')
+            .click()
+    })
+})
+
+Cypress.Commands.add('inscreverEmLigaAberta', () => {
+    cy.get('nav > a').contains('Ligas').click()
+
+    cy.get('.league-card').then(($cards) => {
+        const ligaDisponivel = [...$cards].find((card) => {
+            const botaoParticipar = card.querySelector('button.join')
+
+            return (
+                botaoParticipar?.textContent.trim() === 'Participar' &&
+                !botaoParticipar.disabled
+            )
+        })
+
+        expect(ligaDisponivel, 'Precisa de uma liga disponível para inscrição').to.exist
+
+        cy.wrap(ligaDisponivel)
+            .contains('button.join', 'Participar')
             .click()
     })
 })
