@@ -10,8 +10,6 @@ Cypress.Commands.add('cadastrarUsuarioOrganizador', () => {
         cy.get('input[name="email"]').click().type(novoEmailUnico)
         cy.get('input[name="password"]').click().type(usuarios.novoUsuarioOrganizador.senha)
 
-        console.log(novoEmailUnico)
-
         cy.clickAuthSubmitButton()
     })
 })
